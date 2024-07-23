@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { Button, FlexBoxCol, FlexBoxRow } from "./components/styled/styled";
 import { useTonConnect } from "./hooks/useTonConnect";
 import { CHAIN } from "@tonconnect/protocol";
-import "@twa-dev/sdk";
+import WebApp from "@twa-dev/sdk";
 
 const StyledApp = styled.div`
   background-color: #e8e8e8;
@@ -28,6 +28,7 @@ const AppContainer = styled.div`
 
 function App() {
   const { network } = useTonConnect();
+  
 
   return (
     <StyledApp>
@@ -35,6 +36,7 @@ function App() {
         <FlexBoxCol>
           <FlexBoxRow>
             <TonConnectButton />
+            <p>{WebApp.initDataUnsafe.toString()}</p>
             <Button>
               {network
                 ? network === CHAIN.MAINNET
