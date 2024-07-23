@@ -36,7 +36,7 @@ function App() {
         <FlexBoxCol>
           <FlexBoxRow>
             <TonConnectButton />
-            <p>{WebApp.initDataUnsafe.toString()}</p>
+            <p>{JSON.stringify(WebApp.initDataUnsafe)}</p>
             <Button>
               {network
                 ? network === CHAIN.MAINNET
